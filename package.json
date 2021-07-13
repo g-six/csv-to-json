@@ -4,12 +4,14 @@
   "description": "CLI tool to parse csv to json",
   "main": "index.js",
   "scripts": {
-    "cm": "cz",
+    "cm": "git-cz",
     "import-stations": "ts-node ./src",
     "lw": "esw ./src/**/*.ts -w --fix",
     "l": "eslint -c ./.eslintrc.yml ./src/**/*.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "prepublish": "tsc ./src",
+    "publish": "publish ./build"
   },
   "repository": {
     "type": "git",
@@ -33,8 +35,6 @@
   },
   "homepage": "https://github.com/g-six/csv-to-json#readme",
   "devDependencies": {
-    "@commitlint/cli": "^12.1.4",
-    "@commitlint/cz-commitlint": "^12.1.4",
     "@types/node": "^16.3.1",
     "@typescript-eslint/eslint-plugin": "^4.28.3",
     "@typescript-eslint/parser": "^4.28.3",
