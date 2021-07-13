@@ -1,0 +1,50 @@
+{
+  "name": "g6-csv-to-json",
+  "version": "0.0.1",
+  "description": "CLI tool to parse csv to json",
+  "main": "index.js",
+  "scripts": {
+    "cm": "cz",
+    "import-stations": "ts-node ./src",
+    "lw": "esw ./src/**/*.ts -w --fix",
+    "l": "eslint -c ./.eslintrc.yml ./src/**/*.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/g-six/csv-to-json.git"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/g6-commit-conv"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format && npm run lint",
+      "prepare-commit-msg": "exec < /dev/tty && giz cz --hook || true"
+    }
+  },
+  "author": "g-six",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/g-six/csv-to-json/issues"
+  },
+  "homepage": "https://github.com/g-six/csv-to-json#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/cz-commitlint": "^12.1.4",
+    "@types/node": "^16.3.1",
+    "@typescript-eslint/eslint-plugin": "^4.28.3",
+    "@typescript-eslint/parser": "^4.28.3",
+    "commitizen": "^4.2.4",
+    "eslint": "^7.30.0",
+    "g6-commit-conv": "^1.0.1",
+    "git-cz": "^4.7.6",
+    "husky": "^7.0.1",
+    "prettier": "^2.3.2",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5"
+  }
+}
